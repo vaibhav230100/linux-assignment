@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Data</title>
+</head>
+<body>
+    <h2>Submit Data</h2>
+    <form id="dataForm">
+        <label>Name:</label>
+        <input type="text" id="name" required><br><br>
+        <label>Email:</label>
+        <input type="email" id="email" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message" style="color:red;"></p>
+
+    <script>
+        const API_URL = "{{ api_url }}";
+
+        document.getElementById("dataForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            const res = await fetch(API_URL + "/submit", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ name, email })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                window.location.href = "/success";
+            } else {
+                document.getElementById("message").innerText = data.error;
+            }
+        });
+    </script>
+</body>
+</html>
