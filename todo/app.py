@@ -34,7 +34,7 @@ def submit_todo_item():
 
     collection.insert_one(todo_item)
 
-    return jsonify({"message": "Item stored successfully", "data": todo_item}), 201
+    return jsonify({"message": "Item stored successfully ", "data": todo_item}), 201
 
 
 if __name__ == "__main__":
