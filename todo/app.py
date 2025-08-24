@@ -26,7 +26,7 @@ def submit_todo_item():
 
     todo_item = {
         "itemId": item_id,
-        "itemUUID ": item_uuid,
+        "itemUUID": item_uuid,
         "itemHash": item_hash,
         "itemName ": item_name,
         "itemDescription ": item_description
