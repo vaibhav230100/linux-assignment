@@ -25,7 +25,7 @@ def submit_todo_item():
     item_hash = hashlib.sha256((item_name + item_description).encode()).hexdigest()
 
     todo_item = {
-        "itemId ": item_id,
+        "itemId": item_id,
         "itemUUID ": item_uuid,
         "itemHash": item_hash,
         "itemName ": item_name,
