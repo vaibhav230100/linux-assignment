@@ -28,8 +28,8 @@ def submit_todo_item():
         "itemId ": item_id,
         "itemUUID ": item_uuid,
         "itemHash": item_hash,
-        "itemName": item_name,
-        "itemDescription": item_description
+        "itemName ": item_name,
+        "itemDescription ": item_description
     }
 
     collection.insert_one(todo_item)
