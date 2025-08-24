@@ -26,15 +26,15 @@ def submit_todo_item():
 
     todo_item = {
         "itemId": item_id,
-        "itemUUID ": item_uuid,
-        "itemHash": item_hash,
+        "itemUUID": item_uuid,
+        "itemHash ": item_hash,
         "itemName ": item_name,
         "itemDescription ": item_description
     }
 
     collection.insert_one(todo_item)
 
-    return jsonify({"message": "Item stored successfully", "data": todo_item}), 201
+    return jsonify({"message": "Item stored successfully ", "data": todo_item}), 201
 
 
 if __name__ == "__main__":
